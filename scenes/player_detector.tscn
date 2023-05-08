@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dgxch3ygrx2qw"]
+
+[ext_resource type="Texture2D" uid="uid://blxsgyb63knds" path="res://sprites/white_square.png" id="1_8kpj4"]
+[ext_resource type="Script" path="res://scenes/player_detector.gd" id="2_xfyqj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uteb4"]
+size = Vector2(32, 32)
+
+[node name="player_detector" type="Sprite2D"]
+modulate = Color(0, 0, 0, 0.392157)
+texture = ExtResource("1_8kpj4")
+script = ExtResource("2_xfyqj")
+
+[node name="area" type="Area2D" parent="."]
+
+[node name="col" type="CollisionShape2D" parent="area"]
+shape = SubResource("RectangleShape2D_uteb4")
+
+[connection signal="body_entered" from="area" to="." method="_on_area_body_entered"]
