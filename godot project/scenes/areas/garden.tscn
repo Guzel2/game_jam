@@ -2,11 +2,13 @@
 
 [ext_resource type="Script" path="res://scenes/areas/garden.gd" id="1_0kdim"]
 [ext_resource type="Texture2D" uid="uid://dge8v4ach0by7" path="res://sprites/backgrounds/garden.png" id="2_h233g"]
-[ext_resource type="PackedScene" path="res://scenes/custom_objects/player_detector.tscn" id="3_v10f6"]
+[ext_resource type="PackedScene" uid="uid://cd4gnijua4234" path="res://scenes/custom_objects/player_detector.tscn" id="3_v10f6"]
 
 [node name="garden" type="Node2D"]
 z_index = -1
 script = ExtResource("1_0kdim")
+metadata/_edit_horizontal_guides_ = [63.0]
+metadata/_edit_vertical_guides_ = [-298.0]
 
 [node name="bg" type="Sprite2D" parent="."]
 texture = ExtResource("2_h233g")

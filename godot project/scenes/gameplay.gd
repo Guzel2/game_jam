@@ -36,7 +36,7 @@ func _process(delta): #wird jeden frame gecalled, delta ist die zeit seit dem le
 			if area_to_load != '':
 				load_next_area(area_to_load)
 				area_to_load = ''
-				set_color_to(Color(1, 1, 1, 1))
+				#set_color_to(Color(1, 1, 1, 1))
 	
 	set_camera_position()
 

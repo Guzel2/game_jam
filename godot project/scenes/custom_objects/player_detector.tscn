@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=4 format=3 uid="uid://cd4gnijua4234"]
 
 [ext_resource type="Texture2D" uid="uid://blxsgyb63knds" path="res://sprites/white_square.png" id="1_8kpj4"]
 [ext_resource type="Script" path="res://scenes/custom_objects/player_detector.gd" id="2_xfyqj"]
