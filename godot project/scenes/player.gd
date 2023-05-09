@@ -1,14 +1,14 @@
 extends CharacterBody2D
 
-var speed = 100.0
+var speed = 200.0
 
-func _process(delta): #wird jeden frame gecalled, delta ist die zeit seit dem letzten frame, meistesn 1/60, kann aber bei framdrops sich ändern
+func _process(_delta): #wird jeden frame gecalled, delta ist die zeit seit dem letzten frame, meistesn 1/60, kann aber bei framdrops sich ändern
 	var dir = Vector2(0, 0) #jeden frame wird die richtung auf 0 gesetzt, dadurch ist das movement sehr ruck haft, können überlegen ob es anders besser wäre
 	
 	dir.x = Input.get_axis('left', 'right') #hier wird der linke input mit dem rechten verglichen. Dabei kommen werte zwischen -1 und 1 raus (-1 = liks, 1 = rechts). Auf einem joystick könnte man 0.XX werte kriegen, mit einer Tastatur nicht
 	dir.y = Input.get_axis('up', 'down') #vgl oben
 	
-	dir.normalized() #damit diagonale inputs immer noch die länge 1 haben
+	dir = dir.normalized() #damit diagonale inputs immer noch die länge 1 haben
 	
 	velocity = dir * speed #die richtung wird mit der geschwindigkeit multipliziert
 

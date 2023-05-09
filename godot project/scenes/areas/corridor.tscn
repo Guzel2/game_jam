@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://sbsgk23b2t48"]
+
+[ext_resource type="Script" path="res://scenes/areas/corridor.gd" id="1_rqhvv"]
+[ext_resource type="Texture2D" uid="uid://cyydmemgf61m0" path="res://sprites/backgrounds/main_room.png" id="2_0lgj6"]
+[ext_resource type="PackedScene" path="res://scenes/custom_objects/player_detector.tscn" id="3_umr6f"]
+
+[node name="corridor" type="Node2D"]
+z_index = -1
+script = ExtResource("1_rqhvv")
+
+[node name="bg" type="Sprite2D" parent="."]
+texture = ExtResource("2_0lgj6")
+
+[node name="right_exit" parent="." instance=ExtResource("3_umr6f")]
+position = Vector2(182, 49.25)
+scale = Vector2(1.125, 1.73438)
+open_this_scene = "res://scenes/areas/garden.tscn"
+
+[connection signal="player_entered" from="right_exit" to="." method="_on_right_exit_player_entered"]

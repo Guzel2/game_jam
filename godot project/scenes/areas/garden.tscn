@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cncf1ni4doox6"]
+
+[ext_resource type="Script" path="res://scenes/areas/garden.gd" id="1_0kdim"]
+[ext_resource type="Texture2D" uid="uid://dge8v4ach0by7" path="res://sprites/backgrounds/garden.png" id="2_h233g"]
+[ext_resource type="PackedScene" path="res://scenes/custom_objects/player_detector.tscn" id="3_v10f6"]
+
+[node name="garden" type="Node2D"]
+z_index = -1
+script = ExtResource("1_0kdim")
+
+[node name="bg" type="Sprite2D" parent="."]
+texture = ExtResource("2_h233g")
+
+[node name="left_exit" parent="." instance=ExtResource("3_v10f6")]
+position = Vector2(-370.5, 62.5)
+scale = Vector2(1.21875, 2.15625)
+open_this_scene = "res://scenes/areas/corridor.tscn"
+
+[connection signal="player_entered" from="left_exit" to="." method="_on_left_exit_player_entered"]
