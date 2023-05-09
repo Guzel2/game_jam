@@ -16,4 +16,10 @@ position = Vector2(182, 49.25)
 scale = Vector2(1.125, 1.73438)
 open_this_scene = "res://scenes/areas/garden.tscn"
 
+[node name="wash_room_exit" parent="." instance=ExtResource("3_umr6f")]
+position = Vector2(-140, 239)
+scale = Vector2(2.03125, 0.96875)
+open_this_scene = "res://scenes/areas/wash_room.tscn"
+
 [connection signal="player_entered" from="right_exit" to="." method="_on_right_exit_player_entered"]
+[connection signal="player_entered" from="wash_room_exit" to="." method="_on_wash_room_exit_player_entered"]

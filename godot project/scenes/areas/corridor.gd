@@ -9,3 +9,8 @@ var set_player_position_to = Vector2(125, 50)
 
 func _on_right_exit_player_entered(scene_path):#wenn der exit rechts einen spieler erkennt wird hier ausgelöst
 	emit_signal('open_this_scene', scene_path)
+
+
+func _on_wash_room_exit_player_entered(scene_path):
+	print('enter washroom')
+	emit_signal('open_this_scene', scene_path)
