@@ -74,12 +74,11 @@ func load_scene(scene_path: String):#hier werden später neue scenen geladen, bs
 
 func load_next_area(scene_path: String):
 	if current_area:
+		player.position = current_area.set_player_position_to
 		current_area.queue_free() #enfernt die alte area
 	current_area = load_scene(scene_path) #lädt die nächste area und nimmt die versendete variable an
 	
 	set_camera_area(current_area.size) #gets the size of the new area
-	
-	player.position = current_area.set_player_position_to #das ist eine temporäre lösung, kann man gerne ändern
 	
 	var my_callable = Callable(self, 'start_transition_to_next_area') #das hier verbindet das signal 'open_this_scene' von den areas mit der function 'start_transition_to_next_area'
 	current_area.connect('open_this_scene', my_callable) #das sind alles vorgefertigte functions, muss man so machen

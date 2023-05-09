@@ -14,3 +14,4 @@ func _on_right_exit_player_entered(scene_path):#wenn der exit rechts einen spiel
 func _on_wash_room_exit_player_entered(scene_path):
 	print('enter washroom')
 	emit_signal('open_this_scene', scene_path)
+	set_player_position_to = Vector2(0, 0)
