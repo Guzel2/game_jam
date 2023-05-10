@@ -15,3 +15,8 @@ func _process(_delta): #wird jeden frame gecalled, delta ist die zeit seit dem l
 	move_and_slide() #das ist eine eingebaute function die mit sachen collidiert. so etwa kann man leicht an einer wand lang sliden
 	#eine alternative idee ohne collision ist folgendes:
 	#position += dir * speed * (delta * 60) #hier wird noch delta * 60 dazu gerechnet, damit bei framedrops der char gleich schnell ist
+
+
+func _on_area_2d_body_entered(body):
+	if body == self:
+		print('yay I found a secret')
